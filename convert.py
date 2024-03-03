@@ -10,7 +10,9 @@ def find_network_ip_address(classX, ip):
     result = [0]*4
     for i in range(0, len(classX)):
         result[i] = classX[i]&ip[i]
-    print("Network IP Address: " + str(result))
+    a = ""
+    a+= '.'.join(str(x) for x in result)
+    print("Network IP Address: "+a)
 
     classXCopy = [0]*4
     result2 = [0]*4
@@ -27,11 +29,20 @@ def find_network_ip_address(classX, ip):
         b = classXCopy[i]
         r = result[i]
         result2[i] = int(b)|int(r)
-    print("Broadcast IP address: "+str(result2))
+    
+    broadcast = ""
+    broadcast+= '.'.join(str(x) for x in result2)
+    print("Broadcast IP address: "+broadcast)
 
     result[3]+=1
     result2[3]-=1
-    print("Usable Range of Host Addresses: ",result," to ",result2)
+
+    range1 = ""
+    range1+= '.'.join(str(x) for x in result)
+    range2 = ""
+    range2+= '.'.join(str(x) for x in result2)
+
+    print("Usable Range of Host Addresses: ",range1," to ",range2)
     
 
 while True:
