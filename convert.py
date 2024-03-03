@@ -15,6 +15,9 @@ def find_network_ip_address(classX, ip):
     classXCopy = [0]*4
     result2 = [0]*4
 
+    # Invert submask and then bitwise OR operation between network address and inverted subnet mask
+    # This gives you broadcast IP address ^
+
     for i in range(0,len(classX)):
         if int(classX[i]) == 255:
             classXCopy[i] = 0
