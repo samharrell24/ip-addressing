@@ -42,7 +42,7 @@ def find_network_ip_address(classX, ip):
     range2 = ""
     range2+= '.'.join(str(x) for x in result2)
 
-    print("Usable Range of Host Addresses: ",range1," to ",range2)
+    print("Usable Range of Host Addresses: ",range1,"-",range2)
     
 
 while True:
